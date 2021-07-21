@@ -15,6 +15,6 @@ git clone https://github.com/guillerp8/guille_gangsv2 [local]/guille_gangsv2
 
 # Commands
 
-/creategang
-/modifygangs
-/setgang + id + gang + rank
+- /creategang
+- /modifygangs
+- /setgang + id + gang + rank

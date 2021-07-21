@@ -4,7 +4,7 @@
 
 Unzip de script, rename guille_gangsv2-main to guille_gangsv2 and add to server.cfg **ensure guille_gangsv2**
 
-#Commands
+# Commands
 
 /creategang
 /modifygangs

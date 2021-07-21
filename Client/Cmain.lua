@@ -17,5 +17,6 @@ function log(txt)
 end
 
 TriggerEvent("chat:addSuggestion", "/setgang", ("Set gang user"), {{name = ("Id"), help = ("Player ID")}, {name = ("Gang"), help = ("Name of the gang")}, {name = ("Rank"), help = ("Rank to set")}})
+TriggerEvent("chat:addSuggestion", "/setgangmember", ("Set gang user if you are boss"), {{name = ("Id"), help = ("Player ID")}, {name = ("Rank"), help = ("Name of the gang")}})
 TriggerEvent("chat:addSuggestion", "/creategang", ("Create a gang"), {})
 TriggerEvent("chat:addSuggestion", "/modifygangs", ("Modify gangs"), {})

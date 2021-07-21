@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+#all {
+    position: absolute;
+    transform: perspective(400px) rotateY( -5deg);
+    animation: abrirMenu 0.5s forwards;
+}
+
+.menu-title {
+    position: absolute;
+    width: 250px;
+    border-radius: 5px;
+    background-color: rgba(10, 10, 10, 0.918);
+    animation: cabecera 0.3s ease;
+    box-shadow: 0 0 5px #000;
+    text-align: center;
+    font-size: 1.5vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 0;
+    
+}
+
+
+
+
+.title {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 13px;
+}
+
+.table-code {
+    background-color: rgba(12, 12, 12, 0.774);
+    border-radius: 5px;
+    width: 230px;
+    color: white;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-family: 'Quicksand', sans-serif;
+    transition: ease-in-out 0.3s;
+    animation: cabecera 0.3s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    box-shadow: 0 0 5px #000 !important;
+    margin-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between !important;
+    display: flex!important;
+}
+
+.table-container {
+    margin-bottom: 2px;
+}
+
+.space {
+    height: 2px;
+}
+
+.cerrarmenu {
+    animation: cerrarMenu forwards 0.5s !important;
+}
+
+
+/*.table-code:hover {
+    background-color: rgba(129, 129, 129, 0.918);
+    transform: scale(1.05) !important;
+    transition: ease-in-out 0.3s !important;
+}
+*/
+
+.arrow {
+    content: "";
+    margin-top: 9px;
+    width: 0px;
+    height: 0px;
+    margin-left: 104px;
+    border-top: 20px solid rgb(0, 0, 0);
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+.lines {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 300;
+    opacity: 0.6;
+    will-change: opacity;
+    animation: opacity 3s linear infinite;
+}
+
+.lines:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .5) 51%);
+    background-size: 100% 4px;
+    will-change: background, background-size;
+    animation: scanlines 0.2s linear infinite;
+}
+
+.toAppend {
+    margin-top: 56px;
+}
+
+@keyframes cabecera {
+    from {
+        opacity: 0;
+        transform: translate(0px, 20px);
+    }
+    to {
+        opacity: 100;
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes abrirMenu {
+    from {
+        transform: perspective(500px) rotateY( -30deg);
+    }
+    to {
+        transform: perspective(400px) rotateY( -10deg);
+    }
+}
+
+@keyframes cerrarMenu {
+    from {
+        transform: perspective(400px) rotateY( -10deg);
+    }
+    to {
+        transform: perspective(500px) rotateY( -30deg);
+        opacity: 0;
+    }
+}
+
+
+/* Icon Forward */
+
+.hvr-icon-forward {
+    transition-duration: 0.1s;
+}
+
+.hvr-icon-forward i {
+    transform: translateZ(0);
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+.hvr-icon-forward:hover i,
+.hvr-icon-forward:focus i,
+.hvr-icon-forward:active i {
+    transform: translateX(7px);
+}
+
+
+/* Rectangle Out */
+
+.hvr-rectangle-out {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.hvr-rectangle-out:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transform: scale(0.3);
+    opacity: 0;
+    box-shadow: 0 0 5px white;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.hvr-rectangle-out:hover,
+.hvr-rectangle-out:focus,
+.hvr-rectangle-out:active {
+    color: black;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.hvr-rectangle-out:hover:before,
+.hvr-rectangle-out:focus:before,
+.hvr-rectangle-out:active:before {
+    transform: scale(1);
+    opacity: 100;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.87);
+}
+
+.selected {
+    transform: scale(1);
+    opacity: 100;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.87);
+    color: black;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+

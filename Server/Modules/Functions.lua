@@ -1,6 +1,6 @@
 function isAllowed(source)
     local steam = nil
-    local xPlayer = ESX.GetPlayerFromI(source)
+    local xPlayer = ESX.GetPlayerFromId(source)
     for k,v in ipairs(GetPlayerIdentifiers(source)) do
         if string.sub(v, 1, string.len("steam:")) == "steam:" then
             steam = v

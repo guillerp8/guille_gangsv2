@@ -51,7 +51,8 @@ ESX.RegisterServerCallback('guille_gangs:server:getGangsData', function(source,c
             local boss = gangs[gang].gangInfo().getBossRank()
             local rankName = players[ply.getSteam()].Player().getRankName()
             local data = gangs[gang]
-            cb(gang, rank, data, boss, rankName)
+            local identifier = ply.getSteam()
+            cb(gang, rank, data, boss, identifier)
         end
     end
 end)
@@ -227,6 +228,8 @@ AddEventHandler("guille_gangs:server:buyItem", function(type, name, price)
         end
     end
 end)
+
+
 
 AddEventHandler("esx:playerLoaded", function(source)
     local _src = source

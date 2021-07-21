@@ -1,6 +1,7 @@
 local gangName, rankNum, gangData, bossRank = nil, nil, nil, nil
 local changing = false
 local handcuff = false
+local identifierPly = nil
 isThis = {}
 RegisterNetEvent("guille_gangs:client:getGang")
 AddEventHandler("guille_gangs:client:getGang", function()
@@ -13,23 +14,25 @@ end)
 function getPoints()
     Citizen.Wait(1500)
     log("[INFO] Getting points")
-    ESX.TriggerServerCallback('guille_gangs:server:getGangsData', function(gang, rank, data, boss)
+    ESX.TriggerServerCallback('guille_gangs:server:getGangsData', function(gang, rank, data, boss, identifier)
         if gang then
             gangName = gang
             rankNum = rank
             gangData = data
             bossRank = boss
+            identifierPly = identifier
             enablePoints()
         end
     end)
 end
 
+
+
 function enablePoints()
-    local xPlayer = ESX.GetPlayerData()
     local isBoss = false
     changing = false
     for key, val in pairs(gangData.members) do
-        if val.member.steam == xPlayer.identifier then
+        if val.member.steam == identifierPly then
             if tonumber(val.member.rank) == #gangData.ranks then
                 isBoss = true
             end

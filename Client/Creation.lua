@@ -329,6 +329,16 @@ function attemptToConfirm()
         log("Sending gang to db")
         ESX.ShowNotification('Creating the gang...')
         TriggerServerEvent("guille_gangs:server:addGang", gangName, maxMembers, ranks, gangStyle, red, green, blue, vehicles, points)
+
+        gangName = nil 
+        maxMembers = nil
+        ranks = {}
+        gangStyle = 1 
+        red = 1
+        green = 1
+        blue = 1
+        vehicles = {}
+        points = {}
     --else
         --ESX.ShowNotification('You missed a necessary value')
     --end

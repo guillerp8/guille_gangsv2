@@ -18,3 +18,4 @@ git clone https://github.com/guillerp8/guille_gangsv2 [local]/guille_gangsv2
 - /creategang
 - /modifygangs
 - /setgang + id + gang + rank
+- /setgangmember + id + rank (Only works if you are gang boss to add members to your gang)

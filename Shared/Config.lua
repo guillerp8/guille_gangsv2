@@ -9,6 +9,11 @@ Config['admins'] = {
     "steam:11000011ae11114"
 }
 
+Config['groups'] = {
+    "admin",
+    "superadmin"
+}
+
 Config['saveVehNotif'] = "Press   ~INPUT_CONTEXT~to save the vehicle"
 
 Config['getVehNotif'] =  "Press   ~INPUT_CONTEXT~to get the gang vehicles"

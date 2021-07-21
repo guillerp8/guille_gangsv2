@@ -1,11 +1,11 @@
 local createdGangs = {}
 local newPoints = {}
 local typePoints = {
-    "Save Vehicles", -- Done
-    "Get Vehicles", -- Done
+    "Save Vehicles",
+    "Get Vehicles", 
     "Armory",
     "Boss",
-    "Things to do",
+    --"Things to do",
     "Shop"
 }
 

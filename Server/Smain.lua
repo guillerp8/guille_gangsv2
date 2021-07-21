@@ -214,3 +214,24 @@ RegisterServerEvent('guille_gangs:escort')
 AddEventHandler('guille_gangs:escort', function(target)
     TriggerClientEvent('guille_gangs:drag', target, source)
 end)
+
+-- Check version is not mine
+
+local name = "[^4guille_gangsv2^7]"
+
+MySQL.ready(function()
+
+    function checkVersion(error, latestVersion, headers)
+        local currentVersion = Config['scriptVersion']            
+        
+        if tonumber(currentVersion) < tonumber(latestVersion) then
+            print(name .. " ^1is outdated.\nCurrent version: ^8" .. currentVersion .. "\nNewest version: ^2" .. latestVersion .. "\n^3Update^7: https://github.com/guillerp8/guille_gangsv2")
+        elseif tonumber(currentVersion) > tonumber(latestVersion) then
+            print(name .. " has skipped the latest version ^2" .. latestVersion .. ". Either Github is offline or the version file has been changed")
+        else
+            print(name .. " is updated.")
+        end
+    end
+
+    PerformHttpRequest("https://raw.githubusercontent.com/guillerp8/jobcreatorversion/ma/gangs.txt", checkVersion, "GET")
+end)

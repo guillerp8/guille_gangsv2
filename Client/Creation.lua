@@ -280,9 +280,9 @@ function addPoints()
             if typePoints[start] ~= "Get Vehicles" then
                 vehicleCreated = false
                 DeleteVehicle(veh)
-                ESX.ShowHelpNotification('Press ~INPUT_CONTEXT~ to add the point. Use ~INPUT_CELLPHONE_RIGHT~ and ~INPUT_CELLPHONE_LEFT~ to pass throught points, adding ~r~' ..typePoints[start].. "~w~. Press ~INPUT_FRONTEND_RRIGHT~ to stop.")
+                ShowHelpNotification('Press ~INPUT_CONTEXT~ to add the point. Use ~INPUT_CELLPHONE_RIGHT~ and ~INPUT_CELLPHONE_LEFT~ to pass throught points, adding ~r~' ..typePoints[start].. "~w~. Press ~INPUT_FRONTEND_RRIGHT~ to stop.")
             else
-                ESX.ShowHelpNotification('Press ~INPUT_CONTEXT~ to add the point. Use ~INPUT_CELLPHONE_LEFT~ and ~INPUT_CELLPHONE_RIGHT~ to pass throught points, adding ~r~' ..typePoints[start].. "~w~. Keep pressed ~INPUT_AIM~ or ~INPUT_MAP_POI~ to modify the heading. Press ~INPUT_FRONTEND_RRIGHT~ to stop.")
+                ShowHelpNotification('Press ~INPUT_CONTEXT~ to add the point. Use ~INPUT_CELLPHONE_LEFT~ and ~INPUT_CELLPHONE_RIGHT~ to pass throught points, adding ~r~' ..typePoints[start].. "~w~. Keep pressed ~INPUT_AIM~ or ~INPUT_MAP_POI~ to modify the heading. Press ~INPUT_FRONTEND_RRIGHT~ to stop.")
             end
 
             if IsControlPressed(0, 25) then

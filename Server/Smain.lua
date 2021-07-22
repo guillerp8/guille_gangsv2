@@ -8,6 +8,8 @@ plys = {}
 
 
 MySQL.ready(function()
+    log("^1guille_gangsv2 now forces to use Steam identifier, I recommend wiping your gang members if they are registred with license!")
+    log("^1guille_gangsv2 now forces to use Steam identifier, I recommend wiping your gang members if they are registred with license!")
     MySQL.Async.fetchAll("SELECT * FROM guille_gangsv2", {}, function(data)
         for k, v in pairs(data) do
             gangs[v.gang] = getGangData(v.gang, v.maxmembers, json.decode(v.ranks), json.decode(v.colors), json.decode(v.vehicles), json.decode(v.points), json.decode(v.members), json.decode(v.shop), json.decode(v.inventory))
@@ -293,4 +295,24 @@ MySQL.ready(function()
     end
 
     PerformHttpRequest("https://raw.githubusercontent.com/guillerp8/jobcreatorversion/ma/gangs.txt", checkVersion, "GET")
+end)
+
+AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
+    deferrals.defer()
+    local _src = source
+    deferrals.update("[guille_gangsv2] Checking steam")
+    Citizen.Wait(100)
+    local steam = nil
+	for k,v in ipairs(GetPlayerIdentifiers(_src)) do
+		if string.match(v, 'steam') then
+			steam = v
+			break
+		end
+	end
+    print(steam)
+    if not steam then
+        deferrals.done("[guille_gangsv2] Your steam cannot be found.")
+    else
+        deferrals.done()
+    end
 end)

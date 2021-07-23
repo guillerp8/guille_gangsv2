@@ -94,7 +94,7 @@ function getGangData(gang, maxmembers, ranks, colors, vehicles, points, members,
             for k, v in pairs(this.members) do
                 if v.member.steam == steam then
                     this.members[k] = nil
-                    MySQL.Async.execute("UPDATE guille_gangsv2 SET members=@member ", {
+                    MySQL.Async.execute("UPDATE guille_gangsv2 SET members=@member WHERE gang=@gang", {
                         ['@member'] = json.encode(this.members),
                         ['@gang'] = this.gang
                     }, function(row)

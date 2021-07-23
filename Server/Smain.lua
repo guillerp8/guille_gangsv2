@@ -8,8 +8,7 @@ plys = {}
 
 
 MySQL.ready(function()
-    log("^1guille_gangsv2 now forces to use Steam identifier, I recommend wiping your gang members if they are registred with license!")
-    log("^1guille_gangsv2 now forces to use Steam identifier, I recommend wiping your gang members if they are registred with license!")
+    log("^1Fixed IMPORTANT bug when set gang")
     MySQL.Async.fetchAll("SELECT * FROM guille_gangsv2", {}, function(data)
         for k, v in pairs(data) do
             gangs[v.gang] = getGangData(v.gang, v.maxmembers, json.decode(v.ranks), json.decode(v.colors), json.decode(v.vehicles), json.decode(v.points), json.decode(v.members), json.decode(v.shop), json.decode(v.inventory))

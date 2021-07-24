@@ -8,7 +8,7 @@ plys = {}
 
 
 MySQL.ready(function()
-    log("^1Fixed IMPORTANT bug when set gang")
+    log("^1 I recommend REMAKING all the gangs due ranks modification structure.")
     MySQL.Async.fetchAll("SELECT * FROM guille_gangsv2", {}, function(data)
         for k, v in pairs(data) do
             gangs[v.gang] = getGangData(v.gang, v.maxmembers, json.decode(v.ranks), json.decode(v.colors), json.decode(v.vehicles), json.decode(v.points), json.decode(v.members), json.decode(v.shop), json.decode(v.inventory))

@@ -1,6 +1,8 @@
 
 local gangName, maxMembers, ranks, gangStyle, red, green, blue, vehicles, points = nil, nil, {}, 1, 1, 1, 1, {}, {}
 
+local gangRankToCha = 0
+
 local _altX = false
 local _altY = false
 local _altWidth = false
@@ -112,8 +114,8 @@ AddEventHandler('guille_gangs:client:openCreation', function()
 
             if WarMenu.Button('Add rank') then
                 ESX.ShowNotification('If you press ~r~Y~w~ you delete the last rank that you created.')
-                rank = rank + 1
-                table.insert(ranks, {label = #ranks + 1, num = rank})
+                gangRankToCha = gangRankToCha + 1
+                table.insert(ranks, {label = gangRankToCha, num = gangRankToCha})
             end
 
             if WarMenu.IsItemHovered() then
@@ -131,6 +133,7 @@ AddEventHandler('guille_gangs:client:openCreation', function()
 
             if IsControlJustPressed(1, 246) then
                 table.remove(ranks, #ranks)
+                gangRankToCha = gangRankToCha - 1
             end
 
             WarMenu.End()
@@ -339,6 +342,7 @@ function attemptToConfirm()
         blue = 1
         vehicles = {}
         points = {}
+        gangRankToCha = 0
     --else
         --ESX.ShowNotification('You missed a necessary value')
     --end

@@ -12,7 +12,7 @@ AddEventHandler("guille_gangs:client:getGang", function()
 end)
 
 function getPoints()
-    Citizen.Wait(1500)
+    Citizen.Wait(2000)
     log("[INFO] Getting points")
     ESX.TriggerServerCallback('guille_gangs:server:getGangsData', function(gang, rank, data, boss, identifier)
         if gang then
@@ -25,8 +25,6 @@ function getPoints()
         end
     end)
 end
-
-
 
 function enablePoints()
     local isBoss = false

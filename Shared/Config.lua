@@ -1,8 +1,8 @@
 Config = {}
 
-Config['locale'] = "en"
+Config['locale'] = "es"
 
-Config['scriptVersion'] = 2.0
+Config['scriptVersion'] = 2.1
 
 Config['admins'] = {
     "steam:11000010785ddf7",

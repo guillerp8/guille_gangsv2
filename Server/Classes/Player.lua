@@ -258,7 +258,7 @@ function getGangData(gang, maxmembers, ranks, colors, vehicles, points, members,
         function act.deleteItem(name, cb)
             for k, v in pairs(this.shop) do
                 if v.name == name then
-                    this.shop[k] = nil
+                    table.remove(this.shop, k)
                 end
             end
             MySQL.Async.execute("UPDATE guille_gangsv2 SET shop=@shop WHERE gang = @gang", {

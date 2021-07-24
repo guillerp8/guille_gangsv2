@@ -93,7 +93,7 @@ function getGangData(gang, maxmembers, ranks, colors, vehicles, points, members,
         function act.removeMember(steam, change, OboWombo, cb)
             for k, v in pairs(this.members) do
                 if v.member.steam == steam then
-                    this.members[k] = nil
+                    table.remove(this.members, k)
                     MySQL.Async.execute("UPDATE guille_gangsv2 SET members=@member WHERE gang=@gang", {
                         ['@member'] = json.encode(this.members),
                         ['@gang'] = this.gang

@@ -1,6 +1,6 @@
 Config = {}
 
-Config['locale'] = "es"
+Config['locale'] = "en"
 
 Config['scriptVersion'] = 2.1
 

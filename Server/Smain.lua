@@ -167,6 +167,10 @@ RegisterCommand("setgangmember", function(source, args)
                     return
                 end
             end
+            if not plys[ply.getSteam()] then
+                TriggerClientEvent("guille_gangs:client:notify", _src, "Error on changing gang, tell your player to restart")
+                return
+            end
             if gangs[gang] ~= nil then
                 if gangs[gang].gangInfo().isRankValid(rank) then
                     if players[ply.getSteam()] then

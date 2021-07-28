@@ -22,7 +22,13 @@ MySQL.ready(function()
         end
         local playersOn = GetPlayers()
         for k,v in pairs(playersOn) do
-            plys[GetPlayerIdentifiers(v)[1]] = getPlayerData(v, GetPlayerIdentifiers(v)[1])
+            local steam = nil
+            for k,v in ipairs(GetPlayerIdentifiers(v)) do
+                if string.match(v, 'steam') then
+                    steam = v
+                end
+            end
+            plys[steam] = getPlayerData(v, steam)
         end
     end)
 end)
@@ -239,7 +245,13 @@ end)
 AddEventHandler("esx:playerLoaded", function(source)
     local _src = source
     log("Created player " ..GetPlayerName(_src))
-    plys[GetPlayerIdentifiers(_src)[1]] = getPlayerData(_src, GetPlayerIdentifiers(_src)[1])
+    local steam = nil
+    for k,v in ipairs(GetPlayerIdentifiers(_src)) do
+        if string.match(v, 'steam') then
+            steam = v
+        end
+    end
+    plys[steam] = getPlayerData(_src, steam)
 end)
 
 RegisterServerEvent('guille_gangs:requestarrest')

@@ -34,10 +34,13 @@ function getPlayerData(src, steam)
     this.steam = steam
 
     function this.getSteam(cb)
-        local steam = GetPlayerIdentifiers(this.src)[1]
-        if steam then
-            return steam
+        local steam = nil
+        for k,v in ipairs(GetPlayerIdentifiers(this.src)) do
+            if string.match(v, 'steam') then
+                steam = v
+            end
         end
+        return steam
     end
 
     function this.getSource()

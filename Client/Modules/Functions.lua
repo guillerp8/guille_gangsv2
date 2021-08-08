@@ -22,7 +22,7 @@ function loadanimdict(dictname)
 end
 
 ShowHelpNotification = function(msg, thisFrame, beep, duration)
-	AddTextEntry('esxHelpNotification', msg)
+	AddTextEntry('HelpNotification', msg)
 
 	if thisFrame then
 		DisplayHelpTextThisFrame('HelpNotification', false)

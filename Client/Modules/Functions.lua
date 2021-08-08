@@ -25,10 +25,10 @@ ShowHelpNotification = function(msg, thisFrame, beep, duration)
 	AddTextEntry('esxHelpNotification', msg)
 
 	if thisFrame then
-		DisplayHelpTextThisFrame('esxHelpNotification', false)
+		DisplayHelpTextThisFrame('HelpNotification', false)
 	else
 		if beep == nil then beep = true end
-		BeginTextCommandDisplayHelp('esxHelpNotification')
+		BeginTextCommandDisplayHelp('HelpNotification')
 		EndTextCommandDisplayHelp(0, false, beep, duration or -1)
 	end
 end

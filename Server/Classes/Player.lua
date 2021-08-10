@@ -138,6 +138,10 @@ function getGangData(gang, maxmembers, ranks, colors, vehicles, points, members,
                 name = ply.getName(),
                 rank = rank
             }
+            if member.steam == nil or member.name == nil then
+                TriggerClientEvent("guille_gangs:client:notify", id, "An error has ocurred, restart your game")
+                return
+            end
             table.insert(this.members, {member = member})   
             MySQL.Async.execute("UPDATE guille_gangsv2 SET members=@member WHERE gang = @gang", {
                 ['@member'] = json.encode(this.members),

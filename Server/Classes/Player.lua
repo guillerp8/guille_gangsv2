@@ -138,6 +138,7 @@ function getGangData(gang, maxmembers, ranks, colors, vehicles, points, members,
                 name = ply.getName(),
                 rank = rank
             }
+            Wait(100)
             if member.steam == nil or member.name == nil then
                 TriggerClientEvent("guille_gangs:client:notify", id, "An error has ocurred, restart your game")
                 return

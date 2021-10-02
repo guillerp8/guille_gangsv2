@@ -25,8 +25,5 @@ infringe it by using this software as of my latest contribution.
    changes, alone or combined into a larger program.
 
 3. You must limit use of this software in any manner primarily
-   intended for or directed toward commercial advantage or
-   private monetary compensation to a period of 3 month
-   consecutive calendar days. This limit does not apply to use in
-   developing feedback, modifications, or extensions that you
-   contribute back to those giving this license.
+   intended for or directed toward commercial advantage, you are 
+   not allowed to sell this code.

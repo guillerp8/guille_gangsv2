@@ -13,8 +13,12 @@ MySQL.ready(function()
             gangs[v.gang] = getGangData(v.gang, v.maxmembers, json.decode(v.ranks), json.decode(v.colors), json.decode(v.vehicles), json.decode(v.points), json.decode(v.members), json.decode(v.shop), json.decode(v.inventory))
             for key, value in pairs(json.decode(v.members)) do
                 for g, r in pairs(json.decode(v.ranks)) do
-                    if tonumber(r.num) == tonumber(value.member.rank) then
-                        players[value.member.steam] = manageGang(value.member.steam, v.gang, value.member.rank, r.label)
+                    if value.member then 
+                        if tonumber(r.num) == tonumber(value.member.rank) then
+                            if value.member.steam then
+                                players[value.member.steam] = manageGang(value.member.steam, v.gang, value.member.rank, r.label)
+                            end
+                        end
                     end
                 end
             end

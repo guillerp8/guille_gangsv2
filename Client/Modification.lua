@@ -97,11 +97,13 @@ function openSelectMenu(gang)
                 for k, v in pairs(createdGangs) do
                     if k == gang then
                         for key, val in pairs(v.members) do
-                            if WarMenu.Button(val.member.name.. " - " ..val.member.rank.. " - " ..val.member.steam) then
-                                TriggerServerEvent("guille_gangs:server:removeGangMember", val.member.steam, gang)
-                                WarMenu.CloseMenu()
-                                currentMenu = nil
-                                return
+                            if val.member.steam and val.member.name then
+                                if WarMenu.Button(val.member.name.. " - " ..val.member.rank.. " - " ..val.member.steam) then
+                                    TriggerServerEvent("guille_gangs:server:removeGangMember", val.member.steam, gang)
+                                    WarMenu.CloseMenu()
+                                    currentMenu = nil
+                                    return
+                                end
                             end
                         end
                     end

@@ -27,3 +27,7 @@ infringe it by using this software as of my latest contribution.
 3. You must limit use of this software in any manner primarily
    intended for or directed toward commercial advantage, you are 
    not allowed to sell this code.
+
+4. Origen Company is only authorized to use this resource with el Origen RP,
+   other servers related with the company cannot use this resource in any term.
+   This includes derivations as gang wars servers or related.

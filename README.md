@@ -1,6 +1,6 @@
 # guille_gangsv2 https://discord.gg/eBpmkW6e5j https://discord.gg/eBpmkW6e5j
 
-## Download & Installation
+## Download & Installation (If you need a more complete gang system, check out https://store.rcore.cz/gangsystem#package:4913168 made by my Rcore mates ♥)
 
 ### Using [fvm](https://github.com/qlaffont/fvm-installer)
 

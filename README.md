@@ -1,4 +1,6 @@
-# guille_gangsv2 https://discord.gg/eBpmkW6e5j https://discord.gg/eBpmkW6e5j
+# guille_gangsv2 
+https://discord.gg/nwS6PWxZEs
+https://discord.gg/nwS6PWxZEs
 
 ## Download & Installation (If you need a more complete gang system, check out https://store.rcore.cz/gangsystem#package:4913168 made by my Rcore mates ♥)
 
